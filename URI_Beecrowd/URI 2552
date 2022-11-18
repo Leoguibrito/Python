@@ -1,36 +1,34 @@
-n, m = [int(w) for w in input("Digite o número de linhas e colunas: ").split()]
-
-while (n != 0 or m != 0):
-    matriz = []
-    for i in range (n):
-        linha = [int(w) for w in input("Valores da linha: ").split()]
-        matriz.append(linha)
-    
-    resposta = [ [ 0 for i in range(m) ] for j in range(n) ]
-    for i in range(n):
-        for j in range(m):
-            if matriz[i][j] == 1:
-                resposta[i][j] = 9
-            else:
-                if j != 0:
-                    if matriz[i][j-1] == 1:
-                        resposta[i][j] += 1
-                if j != (m-1):
-                    if matriz[i][j+1] == 1:
-                        resposta[i][j] += 1
-                if i != 0:
-                    if matriz[i-1][j] == 1:
-                        resposta[i][j] += 1
-                if i != (n-1):
-                    if matriz[i+1][j] == 1:
-                        resposta [i][j] += 1
-    
-    for linha in resposta:
-        for coluna in linha:
-            print(coluna, end = ' ')
-        print()
+while True:
+    try:
+        n, m = [int(w) for w in input("Digite o número de linhas e colunas: ").split()]
+        matriz = []
+        for i in range (n):
+            linha = [int(w) for w in input("Valores da linha: ").split()]
+            matriz.append(linha)
         
-    print()
-    n, m = [int(w) for w in input("Digite o número de linhas e colunas: ").split()]
-    
-
+        resposta = [ [ 0 for i in range(m) ] for j in range(n) ]
+        for i in range(n):
+            for j in range(m):
+                if matriz[i][j] == 1:
+                    resposta[i][j] = 9
+                else:
+                    if j != 0:
+                        if matriz[i][j-1] == 1:
+                            resposta[i][j] += 1
+                    if j != (m-1):
+                        if matriz[i][j+1] == 1:
+                            resposta[i][j] += 1
+                    if i != 0:
+                        if matriz[i-1][j] == 1:
+                            resposta[i][j] += 1
+                    if i != (n-1):
+                        if matriz[i+1][j] == 1:
+                            resposta [i][j] += 1
+        
+        for linha in resposta:
+            for coluna in linha:
+                print(coluna, end = ' ')
+            print()
+     
+    except EOFError:
+        break
