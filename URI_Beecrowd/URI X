@@ -1,0 +1,28 @@
+
+n, m = [int(w) for w in input("Digite o número de linhas e colunas: ").split()]
+
+while n != 0 and m != 0:
+    matriz = []
+    for i in range (n):
+        linha = [int(w) for w in input("Valores da linha: ").split()]
+        matriz.append(linha)
+    
+    col = 0
+    lin = 0
+    for linha in matriz:
+        
+        for coluna in linha:
+            if coluna == 1:
+                print (9, end = ' ')
+                col += 1
+            else:
+                
+                
+                col += 1
+    
+        lin += 1
+        print()
+    
+    print()
+    n, m = [int(w) for w in input("Digite o número de linhas e colunas: ").split()]
+    
